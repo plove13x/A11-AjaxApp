@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>A11 AjaxApp</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body>
+
+    <div class="hero-unit">
+      <h1>'Allo, 'Allo!</h1>
+        <form id="blogPostMgmt">
+            <label>Title</label>    
+            <input type="text" name="title" class="getThisOne" id="noSuchThing" value="a">
+            <label>Author</label>    
+            <input type="text" name="author" value="">
+            <label>Body</label>
+            <textarea type="text" name="body" rows="4" cols="50">body goes here</textarea>
+            <button type="submit">Post</button>
+            <button name="updatePost">Update</button>
+            <button name="delete">Delete</button>
+            <button name="refreshList">Refresh List</button>
+            <label>List of Posts</label>
+        </form>
+        <div class="biggerBox"></div>
+    </div>
+
+    <script src="scripts/vendor.js"></script>
+
+    <script type="text/template" id="formTemplateScript">
+        <label>Title</label>    
+        <input type="text" name="title" class="getThisOne" value="<%= title %>">        
+        <label>Author</label>    
+        <input type="text" name="author" value="<%= author %>">
+        <label>Body</label>
+        <textarea type="text" name="body" rows="4" cols="50"><%= body %></textarea>
+        <button type="submit">Post</button>
+        <button name="updatePost">Update</button>
+        <button name="delete" data-id="<%= _id %>">Delete</button>
+        <button name="refreshList">Refresh List</button>
+        <label>List of Posts</label>
+    </script>
+
+    <script type="text/template" id="listTemplateScript">
+        <a href="" class="clickableList" data-id="<%= _id %>"><%= title %></a>
+    </script>
+
+
+
+        <script src="scripts/main.js"></script>
+</body>
+</html>
